@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('saludar/', views.saludar),
-    path('saludar-param/<str:nombre>/<str:apellido>', views.saludar_parametros)
+    path('saludar-param/<str:nombre>/<str:apellido>', views.saludar_parametros),
+    path('ejercicio/', views.ejercicio),
+    path('ejercicio2/', views.ejercicio2)
 ]
