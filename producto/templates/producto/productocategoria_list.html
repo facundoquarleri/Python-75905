@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% block Title %}
+    Prodcutos: Lista de Productos
+{% endblock Title %}
+
+{% block content %}
+    <button>
+        <a href="{% url 'producto:index' %}">Volver</a>
+    </button>    
+    {% for object in prodcutocategoria %}
+        <p>{{  object  }}</p>
+    {% endfor %}
+ 
+{% endblock content %}

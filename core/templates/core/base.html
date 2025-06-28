@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+</head>
+<body style="color: blue; justify-items: center;">
+    {% include 'core/navbar.html' %}    
+     
+    <h1 style="color: red;">
+        {% block Title %}
+            
+        {% endblock Title %}
+    </h1>
+
+    {% block content %}
+        
+    {% endblock content %}
+</body>
+</html>
