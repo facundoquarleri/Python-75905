@@ -23,5 +23,6 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("cliente/", include("cliente.urls")),
-    path("", include('core.urls')),  
+    path("", include('core.urls')),
+    path("producto/", include('producto.urls')),  
 ]
