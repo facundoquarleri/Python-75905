@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block Title %}
+    Detalle de la Categoría de Producto
+{% endblock Title %}
+
+{% block content %}
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ object.nombre }}</h5>
+            <p class="card-text">{{ object.descripcion }}</p>
+            <a href="{% url 'producto:productocategoria_update' object.pk %}" class="btn btn-warning me-2">
+                <span class="bi bi-pencil-square"></span> Editar
+            </a>
+            <a href="{% url 'producto:productocategoria_delete' object.pk %}" class="btn btn-danger me-2">
+                <span class="bi bi-trash"></span> Eliminar
+            </a>
+            <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-secondary">
+                <span class="bi bi-arrow-left"></span> Volver
+            </a>
+        </div>
+    </div>
+{% endblock content %}

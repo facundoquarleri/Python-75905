@@ -1,13 +1,39 @@
-<nav style="display: flex; justify-content: space-between; align-items: center;"> 
-    <button>
-    <a href="{% url 'core:index' %}">Inicio</a>
-    </button>
-    
-    <button>
-    <a href="{% url 'cliente:index' %}">Clientes</a>
-    </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Agregar los enlaces a los archivos CSS de Bootstrap y Bootstrap Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="{% url 'core:index' %}">
+          <span class="bi bi-box-seam"></span> Proyecto
+        </a>
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'core:index' %}">
+                <span class="bi bi-house-door"></span> Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'core:aboutme' %}">
+                <span class="bi bi-person-vcard"></span> About Me
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <button>
-        <a href="{% url 'producto:index' %}">Productos</a>
-    </button>
-</nav>
+    <!-- Agregar los scripts de Bootstrap y jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block Title %}
+    Mis Datos
+{% endblock Title %}
+
+{% block content %}
+<div class="card shadow-sm mb-4 mx-auto" style="max-width: 500px;">
+    <div class="card-body">
+        <h5 class="card-title mb-3">Datos del Cliente</h5>
+        <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item"><strong>Nombre:</strong> {{ cliente.nombre }}</li>
+            <li class="list-group-item"><strong>Apellido:</strong> {{ cliente.apellido }}</li>
+            <li class="list-group-item"><strong>Email:</strong> {{ cliente.mail }}</li>
+            <li class="list-group-item"><strong>País de Origen:</strong> {{ cliente.pais_origen }}</li>
+            <li class="list-group-item"><strong>Nacimiento:</strong> {{ cliente.nacimiento }}</li>
+        </ul>
+        <a href="{% url 'producto:index' %}" class="btn btn-secondary">
+            <span class="bi bi-arrow-left"></span> Volver a productos
+        </a>
+    </div>
+</div>
+{% endblock content %}

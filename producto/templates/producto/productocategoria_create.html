@@ -5,10 +5,14 @@
 {% endblock Title %}
 
 {% block content %}
-    
+    <a href="{% url 'producto:index' %}" class="btn btn-secondary mb-3">
+        <span class="bi bi-arrow-left"></span> Volver
+    </a>
     <form method="post">
         {% csrf_token %}
-        {{  formulario  }}
+        <table>
+        {{  form  }}
         <button type="submit">Enviar</button>
+        </table>
     </form>
 {% endblock content %}

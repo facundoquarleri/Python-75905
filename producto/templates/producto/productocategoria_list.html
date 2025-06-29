@@ -5,11 +5,45 @@
 {% endblock Title %}
 
 {% block content %}
-    <button>
-        <a href="{% url 'producto:index' %}">Volver</a>
-    </button>    
-    {% for object in productocategoria %}
-        <p>{{  object  }}</p>
-    {% endfor %}
- 
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th class="text-end">
+                        <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-success btn-sm">
+                            <span class="bi bi-plus-circle"></span> Crear
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ object.nombre }}</td>
+                    <td class="text-end">
+                        <a href="{% url 'producto:productocategoria_detail' object.pk %}" class="btn btn-info btn-sm">
+                            <span class="bi bi-eye"></span> Ver descripción del producto
+                        </a>
+                        <a href="{% url 'producto:productocategoria_update' object.pk %}" class="btn btn-warning btn-sm">
+                            <span class="bi bi-pencil-square"></span> Editar
+                        </a>
+                        <a href="{% url 'producto:productocategoria_delete' object.pk %}" class="btn btn-danger btn-sm">
+                            <span class="bi bi-trash"></span> Eliminar Producto
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center">No hay categorías de producto registradas.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{% url 'producto:index' %}" class="btn btn-secondary mt-3">
+        <span class="bi bi-arrow-left"></span> Volver
+    </a>
 {% endblock content %}

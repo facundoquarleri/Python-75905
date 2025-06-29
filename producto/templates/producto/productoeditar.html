@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block Title %}
+    Editar Categoría de Producto
+{% endblock Title %}
+
+{% block content %}
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success me-2">
+                    <span class="bi bi-check-circle"></span> Guardar Cambios
+                </button>
+                <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-secondary">
+                    <span class="bi bi-arrow-left"></span> Cancelar
+                </a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

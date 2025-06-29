@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block Title %}
+    About Me
+{% endblock Title %}
+
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width: 600px;">
+    <div class="card-body">
+        <h3 class="card-title mb-3">Sobre mí</h3>
+        <p class="card-text">¡Hola! Soy Facundo Quarleri, estudiante de la comisión 75905. Este es mi primer proyecto django presentado. Espero les guste lo que veran en el.</p>
+        <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item"><strong>Nombre:</strong> Facundo Quarleri</li>
+            <li class="list-group-item"><strong>Hobbies:</strong> Jugar futbol. Jugar videojuegos. Leer acerca de filosofia y psicologia</li>
+            <li class="list-group-item"><strong>Edad:</strong> 20 años</li>
+            <li class="list-group-item"><strong>Por que estudie esto?:</strong> Soy un gran aficionado a los videojuegos, por lo que decidi adentrarme en el mundo de la programacion para tener una base. Luego, me gustaria orientarme mas al mundo de la programacion de videojugos para poder cumplir mi deseo de desarrollar el mio propio</li>
+    </ul>
+        <a href="{% url 'core:index' %}" class="btn btn-secondary">
+            <span class="bi bi-arrow-left"></span> Volver al inicio
+        </a>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+{% block Title %}
+    Login de Cliente
+{% endblock Title %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Iniciar sesión como cliente</h5>
+                {% if error %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="mail" name="mail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nacimiento" class="form-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="nacimiento" name="nacimiento" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pais_origen" class="form-label">País de Origen</label>
+                        <input type="text" class="form-control" id="pais_origen" name="pais_origen" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <span class="bi bi-box-arrow-in-right"></span> Ingresar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -5,13 +5,15 @@
 {% endblock Title %}
 
 {% block content %}
-    <button>
-    <a href="{% url 'cliente:cliente_list' %}">Listar Clientes</a>
-    </button>
-    <button>
-    <a href="{% url 'cliente:pais_list' %}">Listar Paises</a>
-    </button>
-    <button>
-        <a href="/">Inicio</a>
-    </button>
+    <div class="d-flex flex-column align-items-center gap-3 mt-5">
+        <a href="{% url 'cliente:cliente_list' %}" class="btn btn-primary btn-lg">
+            <span class="bi bi-people"></span> Listar Clientes
+        </a>
+        <a href="{% url 'cliente:pais_list' %}" class="btn btn-info btn-lg">
+            <span class="bi bi-flag"></span> Listar Países
+        </a>
+        <a href="/" class="btn btn-secondary btn-lg">
+            <span class="bi bi-arrow-left"></span> Inicio
+        </a>
+    </div>
 {% endblock content %}

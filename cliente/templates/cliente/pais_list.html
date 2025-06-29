@@ -4,12 +4,19 @@
 {% endblock Title %}
 
 {% block content %}
-    <button>
-        <a href="{% url 'cliente:index' %}">Volver</a>
-    </button>    
-    {% for pais in paises %}
-        <p>{{  pais  }}</p>
-    {% endfor %}
-    </body>
-    </html>
+    <a href="{% url 'cliente:index' %}" class="btn btn-secondary mb-3">
+        <span class="bi bi-arrow-left"></span> Volver
+    </a>
+    <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+            <h5 class="card-title mb-3">Lista de Países</h5>
+            <ul class="list-group list-group-flush">
+                {% for pais in paises %}
+                    <li class="list-group-item">{{ pais }}</li>
+                {% empty %}
+                    <li class="list-group-item text-center">No hay países registrados.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock content %}

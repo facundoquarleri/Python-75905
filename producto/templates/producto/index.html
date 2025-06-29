@@ -5,6 +5,14 @@
 {% endblock Title %}
 
 {% block content %}
+    <div class="mb-3">
+        <a href="{% url 'cliente:clientedatos' %}" class="btn btn-info">
+            <span class="bi bi-person-circle"></span> Mis datos
+        </a>
+        <a href="{% url 'core:index' %}" class="btn btn-secondary ms-2">
+            <span class="bi bi-arrow-left"></span> Volver
+        </a>
+    </div>
     <button>   
         <a href="{% url 'producto:productocategoria_list' %}">Listar Categorias de Productos</a>
     </button> 
